@@ -23,7 +23,7 @@ class CreateBookView(APIView):
         # получите данные из запроса
         serializer = BookSerializer(data=request.data) #передайте данные из запроса в сериализатор
         if serializer.is_valid(raise_exception=True): #если данные валидны
-            serializer.save
+            serializer.save()
             return Response('Книга успешно создана') # возвращаем ответ об этом
 
 
